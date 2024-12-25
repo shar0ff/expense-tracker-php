@@ -119,7 +119,7 @@ $prev_type = $_SESSION['prev_category_type'] ?? 'expense';
                 <h2>Add New Category</h2>
                 <form action="handler_cat.php" method="POST" id="addCategoryForm">
                     <input type="hidden" name="action" value="add">
-                    <label>Name:&nbsp;<input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>"></label>
+                    <label>Name:&nbsp;<input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>" required></label>
                     <label>Type:&nbsp; 
                         <select name="type" required>
                             <option value="expense" <?php if ($prev_type === 'expense') echo 'selected'; ?>>Expense</option>
@@ -129,8 +129,26 @@ $prev_type = $_SESSION['prev_category_type'] ?? 'expense';
                     <button type="submit">Add Category</button>
                 </form>
             </div>
+            <div class="add-item"> 
+                <h2>Add New Category (Ajax)</h2>
+                <form id="ajaxAddCategoryForm">
+                    <label>
+                        Name:&nbsp; <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        Type:&nbsp;
+                        <select name="type" required>
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </label>
+                    <button type="submit">Add Category</button>
+                </form>
+                <div id="ajaxCategoryMessage"></div>
+            </div>
         </div>
         <script src="js/categories.js"></script>
+        <script src="js/categories_ajax.js"></script>
     </body>
 </html>
 

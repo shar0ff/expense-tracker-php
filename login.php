@@ -60,7 +60,7 @@ $prev_email = $_SESSION['prev_email'] ?? '';
 
             <form method="POST" id="loginForm">
                 <div class="input-field"> 
-                    <input type="email" name="email" required value="<?php echo htmlspecialchars($prev_email); ?>">
+                    <input type="email" name="email" required value="<?php echo htmlspecialchars($prev_email); ?>" required>
                     <label>Email: </label>
                 </div>
                 <div class="input-field"> 

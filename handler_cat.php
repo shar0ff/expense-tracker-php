@@ -11,6 +11,7 @@
 
 require 'common.php'; // Include utilities and database connection
 requireLogin(); // Ensure the user is logged in
+header('Content-Type: application/json; charset=UTF-8');
 
 $user = getCurrentUser($pdo); // Retrieve current logged-in user
 
@@ -57,6 +58,36 @@ if ($action === 'add') {
 
     $_SESSION['category_success'] = 'Category added successfully.';
     header('Location: categories.php');
+    exit;
+}
+
+if (action === 'add_ajax') {
+    $name = trim($_POST['name'] ?? '');
+    $type = trim($_POST['type'] ?? '');
+
+    // Validation: Check presence of name and type
+    if ($name === '' || $type === '') {
+        echo json_encode(['success' => false, 'message' => 'Name and Type are required.']);   
+        exit;
+    }
+
+    // Validation: Check name length
+    if (strlen($name) > 100) {
+        echo json_encode(['success' => false, 'message' => 'Category name must be 100 characters or fewer.']);   
+        exit;
+    }
+
+    // Validation: Check valid type
+    if (!in_array($type, ['income', 'expense'])) {
+        echo json_encode(['success' => false, 'message' => 'Invalid category type. Must be "income" or "expense".']);   
+        exit;
+    }
+
+    // Insert into DB
+    $stmt = $pdo->prepare("INSERT INTO Category (user_id, name, type) VALUES (?, ?, ?)");
+    $stmt->execute([$user['id'], $name, $type]);
+
+    echo json_encode(['success' => true, 'message' => 'Category added successfully!']);
     exit;
 }
 

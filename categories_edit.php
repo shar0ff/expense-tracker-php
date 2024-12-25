@@ -60,7 +60,7 @@ $prev_type = $_SESSION['prev_category_type'] ?? $category['type'];
                 <form action="handler_cat.php" method="POST" id="editCategoryForm">
                     <input type="hidden" name="action" value="update">
                     <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
-                    <label>Name:&nbsp; <input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>"></label>
+                    <label>Name:&nbsp; <input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>" required></label>
                     <label>Type:&nbsp;
                         <select name="type" required>
                             <option value="expense" <?php if ($prev_type === 'expense') echo 'selected'; ?>>Expense</option>

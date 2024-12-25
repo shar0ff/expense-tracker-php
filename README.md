@@ -35,9 +35,13 @@ manage categories, handle user accounts, upload profile pictures, and track inco
 
 ## Usage
 - Sign up or log in from the homepage.
+![Homepage](./uploads/index.png)
 - Once logged in, access your dashboard to manage categories, operations, or edit your profile.
+![Users dashboard](./uploads/dashboard.png)
 - If you are an admin, manage all users from the admin panel.
+![Admin panel](./uploads/admin.png)
 - Try adding some categories and operations to get started.
+![Pages for managing operations and its categories](./uploads/admin.png)
 
 ## Print-Optimized Pages
 The project includes `@media print` styles to produce clean, printer-friendly output.  

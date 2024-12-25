@@ -57,7 +57,7 @@ $prev_role = $_SESSION['prev_role'] ?? $userToEdit['role'];
                     <input type="hidden" name="action" value="update">
                     <input type="hidden" name="id" value="<?php echo $userToEdit['id']; ?>">
                     <label>Role:&nbsp;
-                        <select name="role">
+                        <select name="role" required>
                             <option value="User" <?php if ($userToEdit['role'] === 'User') echo 'selected'; ?>>User</option>
                             <option value="Admin" <?php if ($userToEdit['role'] === 'Admin') echo 'selected'; ?>>Admin</option>
                         </select>
