@@ -41,7 +41,8 @@ manage categories, handle user accounts, upload profile pictures, and track inco
 - If you are an admin, manage all users from the admin panel.
 ![Admin panel](./uploads/admin.png)
 - Try adding some categories and operations to get started.
-![Pages for managing operations and its categories](./uploads/admin.png)
+![Pages for managing operations and its categories](./uploads/categories.png)
+![Pages for managing operations and its categories](./uploads/operations.png)
 
 ## Print-Optimized Pages
 The project includes `@media print` styles to produce clean, printer-friendly output.  
