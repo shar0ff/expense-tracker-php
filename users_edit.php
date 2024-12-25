@@ -56,7 +56,7 @@ $prev_role = $_SESSION['prev_role'] ?? $userToEdit['role'];
                 <form action="handler_user.php" method="POST" id="editUserForm">
                     <input type="hidden" name="action" value="update">
                     <input type="hidden" name="id" value="<?php echo $userToEdit['id']; ?>">
-                    <label>Role:&nbsp;
+                    <label>*Role:&nbsp;
                         <select name="role" required>
                             <option value="User" <?php if ($userToEdit['role'] === 'User') echo 'selected'; ?>>User</option>
                             <option value="Admin" <?php if ($userToEdit['role'] === 'Admin') echo 'selected'; ?>>Admin</option>
@@ -67,6 +67,7 @@ $prev_role = $_SESSION['prev_role'] ?? $userToEdit['role'];
                         <input type="password" name="new_password">
                     </label>
                     <br><br>
+                    <div>* Fields are required </div>
                     <button type="submit">Update User</button>
                 </form>
             </div>

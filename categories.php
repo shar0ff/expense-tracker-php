@@ -119,13 +119,14 @@ $prev_type = $_SESSION['prev_category_type'] ?? 'expense';
                 <h2>Add New Category</h2>
                 <form action="handler_cat.php" method="POST" id="addCategoryForm">
                     <input type="hidden" name="action" value="add">
-                    <label>Name:&nbsp;<input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>" required></label>
-                    <label>Type:&nbsp; 
+                    <label>*Name:&nbsp;<input type="text" name="name" required value="<?php echo htmlspecialchars($prev_name); ?>" required></label>
+                    <label>*Type:&nbsp; 
                         <select name="type" required>
                             <option value="expense" <?php if ($prev_type === 'expense') echo 'selected'; ?>>Expense</option>
                             <option value="income" <?php if ($prev_type === 'income') echo 'selected'; ?>>Income</option>
                         </select>
                     </label>
+                    <div>* Fields are required </div>
                     <button type="submit">Add Category</button>
                 </form>
             </div>
@@ -133,15 +134,16 @@ $prev_type = $_SESSION['prev_category_type'] ?? 'expense';
                 <h2>Add New Category (Ajax)</h2>
                 <form id="ajaxAddCategoryForm">
                     <label>
-                        Name:&nbsp; <input type="text" name="name" required>
+                        *Name:&nbsp; <input type="text" name="name" required>
                     </label>
                     <label>
-                        Type:&nbsp;
+                        *Type:&nbsp;
                         <select name="type" required>
                             <option value="expense">Expense</option>
                             <option value="income">Income</option>
                         </select>
                     </label>
+                    <div>* Fields are required </div>
                     <button type="submit">Add Category</button>
                 </form>
                 <div id="ajaxCategoryMessage"></div>

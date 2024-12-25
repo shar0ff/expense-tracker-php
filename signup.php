@@ -99,17 +99,17 @@ $prev_email = $_SESSION['prev_email'] ?? '';
             <form method="POST" id="signupForm">
                 <div class="input-field">
                     <input type="email" name="email" required value="<?php echo htmlspecialchars($prev_email); ?>">
-                    <label> Email: </label>
+                    <label> *Email: </label>
                 </div>
                 <div class="input-field">
                     <input type="password" name="password" required>
-                    <label> Password: </label>
+                    <label> *Password: </label>
                 </div>
                 <div class="input-field">
                     <input type="password" name="confirm_password" required>
-                    <label> Confirm Password: </label>
+                    <label> *Confirm Password: </label>
                 </div>
-
+                <div class="reset-link">* Fields are required </div>
                 <div class="input-field">
                     <input type="submit" value="Sign Up">
                 </div>

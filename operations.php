@@ -124,7 +124,7 @@ $prev_date = $_SESSION['prev_operation_date'] ?? '';
                 <h2>Add New Operation</h2>
                 <form action="handler_op.php" method="POST" id="addOperationForm">
                     <input type="hidden" name="action" value="add">
-                    <label>Category:&nbsp; 
+                    <label>*Category:&nbsp; 
                         <select name="category_id" required>
                             <option value="">-- Select Category --</option>
                             <?php foreach ($categories as $cat): ?>
@@ -134,8 +134,9 @@ $prev_date = $_SESSION['prev_operation_date'] ?? '';
                             <?php endforeach; ?>
                         </select>
                     </label>
-                    <label>Amount:&nbsp;  <input type="number" step="0.01" name="amount" value="<?php echo htmlspecialchars($prev_amount); ?>" required></label>
-                    <label>Date:&nbsp;  <input type="datetime-local" name="date" value="<?php echo htmlspecialchars($prev_date); ?>" required></label>
+                    <label>*Amount:&nbsp;  <input type="number" step="0.01" name="amount" value="<?php echo htmlspecialchars($prev_amount); ?>" required></label>
+                    <label>*Date:&nbsp;  <input type="datetime-local" name="date" value="<?php echo htmlspecialchars($prev_date); ?>" required></label>
+                    <div>* Fields are required </div>
                     <button type="submit">Add Operation</button>
                 </form>
             </div>

@@ -59,7 +59,7 @@ $prev_date = $_SESSION['prev_operation_date'] ?? date('Y-m-d\TH:i:s', strtotime(
                 <form action="handler_op.php" method="POST" id="editOperationForm">
                     <input type="hidden" name="action" value="update">
                     <input type="hidden" name="id" value="<?php echo $operation['id']; ?>">
-                    <label>Category:&nbsp;
+                    <label>*Category:&nbsp;
                         <select name="category_id" required>
                             <?php foreach ($categories as $cat): ?>
                                 <option value="<?php echo $cat['id']; ?>" <?php if ($cat['id'] == $operation['category_id']) echo 'selected'; ?>>
@@ -68,8 +68,9 @@ $prev_date = $_SESSION['prev_operation_date'] ?? date('Y-m-d\TH:i:s', strtotime(
                             <?php endforeach; ?>
                         </select>
                     </label>
-                    <label>Amount:&nbsp; <input type="number" step="0.01" name="amount" value="<?php echo htmlspecialchars($operation['amount']); ?>" required></label>
-                    <label>Date:&nbsp; <input type="datetime-local" name="date" value="<?php echo date('Y-m-d\TH:i:s', strtotime($operation['date'])); ?>" required></label>
+                    <label>*Amount:&nbsp; <input type="number" step="0.01" name="amount" value="<?php echo htmlspecialchars($operation['amount']); ?>" required></label>
+                    <label>*Date:&nbsp; <input type="datetime-local" name="date" value="<?php echo date('Y-m-d\TH:i:s', strtotime($operation['date'])); ?>" required></label>
+                    <div>* Fields are required </div>
                     <button type="submit">Update Operation</button>
                 </form>
             </div>

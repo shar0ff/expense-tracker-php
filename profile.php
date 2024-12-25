@@ -60,6 +60,7 @@ $profilePic = $user['profile_picture'] ? 'uploads/' . $user['profile_picture'] :
                 <form action="handler_profile.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="upload_picture">
                     <input type="file" name="profile_picture" accept="image/*" required>
+                    <div>Field is required </div>
                     <button type="submit">Upload</button>
                 </form>
             </div>
@@ -69,15 +70,16 @@ $profilePic = $user['profile_picture'] ? 'uploads/' . $user['profile_picture'] :
                 <h3>Change Password</h3>
                 <form action="handler_profile.php" method="POST" id="changePasswordForm">
                     <input type="hidden" name="action" value="change_password">
-                    <label>Current Password:&nbsp;
+                    <label>*Current Password:&nbsp;
                         <input type="password" name="current_password" required>
                     </label>
-                    <label>New Password:&nbsp;
+                    <label>*New Password:&nbsp;
                         <input type="password" name="new_password" required>
                     </label>
-                    <label>Confirm New Password:&nbsp;
+                    <label>*Confirm New Password:&nbsp;
                         <input type="password" name="confirm_new_password" required>
                     </label>
+                    <div>* Fields are required </div>
                     <button type="submit">Update Password</button>
                 </form>
             </div>
