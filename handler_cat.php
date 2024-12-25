@@ -61,7 +61,7 @@ if ($action === 'add') {
     exit;
 }
 
-if (action === 'add_ajax') {
+if ($action === 'add_ajax') {
     $name = trim($_POST['name'] ?? '');
     $type = trim($_POST['type'] ?? '');
 
